@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 0.5" "http://jpf.sourceforge.net/plugin_0_5.dtd">
+<plugin id="uimaae.plugin" version="!PROJECT_VERSION">
+   <attributes>
+      <attribute id="name" value="uimaae-converter"/>
+      <attribute id="description" value="Run a UIMA analysis engine from a pear file to annotate content"/>
+   </attributes>
+  <requires>
+    <import plugin-id="main.plugin" />
+  </requires>
+  <runtime>    
+      <library id="converter-uimaae" path="lib/!PROJECT_JAR" type="code"/>
+      <library id="uima-sdk" path="lib/uima-core.jar" type="code"/>
+   </runtime>
+  <extension plugin-id="main.plugin" point-id="com.ibm.dataexplorer.converter.ByteArrayConverter"
+             id="uimaae-converter">
+    <parameter id="class" value="com.mnsuk.converter.UimaAE"/>
+  </extension>
+</plugin>

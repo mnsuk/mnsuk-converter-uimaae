@@ -1,0 +1,23 @@
+<configuration>
+  <category name="com.vivisimo">
+    <priority value="OFF" />
+  </category>
+  <category name="com.ibm">
+    <priority value="OFF" />
+  </category>
+  <category name="com.mnsuk.converter">
+    <priority value="TRACE" />
+  </category>
+  <root>
+    <priority value="OFF" />
+    <appender-ref ref="FILE" />
+  </root>
+  <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+    <param name="MaxBackupIndex" value="9" />
+    <param name="MaximumFileSize" value="10000000" />
+    <param name="File" value="%LOGDIR/mnsuk-converter2.log" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d [%t] %-5p %c#%M %m%n" />
+    </layout>
+  </appender>
+</configuration>

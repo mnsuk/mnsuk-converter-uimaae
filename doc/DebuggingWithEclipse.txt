@@ -1,0 +1,12 @@
+In Crawling global settings java add to "Additional Java converter JVM options"
+-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=1044
+
+This means nothing will be executed, until you’ve connected remotely to the debugger.
+To quickly disable change suspend=n. Dont forget to remove! 
+
+In Eclipse
+Run-Debug configuragtions new “Remote Java Application”. 
+
+start colleciton
+start eclispe debug
+
